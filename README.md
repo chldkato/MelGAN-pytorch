@@ -9,7 +9,7 @@
 2. **`~/MelGAN-pytorch`에 학습 데이터 준비**
 
    ```
-   MelGAN-Korean
+   MelGAN-pytorch
      |- archive
          |- kss
              |- 1
