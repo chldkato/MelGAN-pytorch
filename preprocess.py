@@ -5,9 +5,7 @@ from tqdm import tqdm
 from hparams import *
 
 
-base_dir = '/home/chldkato/data/kss'
-
-text_dir = sorted(glob.glob(os.path.join(base_dir, 'archive/transcript.v.1.4.txt')))
+text_dir = sorted(glob.glob(os.path.join('./archive/transcript.v.1.4.txt')))
 
 metadata = pd.read_csv(text_dir[0], dtype='object', sep='|', header=None)
 wav_dir = metadata[0].values
@@ -18,7 +16,7 @@ os.makedirs(out_dir + '/mel', exist_ok=True)
 os.makedirs(out_dir + '/audio', exist_ok=True)
 
 for idx, fn in enumerate(tqdm(wav_dir)):
-    file_dir = base_dir + '/archive/kss/'+ fn
+    file_dir = './archive/kss/'+ fn
     wav, _ = librosa.load(file_dir, sr=sample_rate)
     spec = librosa.stft(wav, n_fft=n_fft, hop_length=hop_length, win_length=win_length)
     spec = np.abs(spec)
