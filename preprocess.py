@@ -5,7 +5,7 @@ from tqdm import tqdm
 from hparams import *
 
 
-text_dir = sorted(glob.glob(os.path.join('./archive/transcript.v.1.4.txt')))
+text_dir = './archive/transcript.v.1.4.txt'
 
 metadata = pd.read_csv(text_dir, dtype='object', sep='|', header=None)
 wav_dir = metadata[0].values
